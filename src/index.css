@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+
+@theme{
+    --color-bg: #0a0a0a;             /* Dark background */
+  --color-primary: #c8f400;        /* That bright lime/yellow */
+  --color-card: #141414;           /* Slightly lighter black for cards */
+  --color-border: #565656;         /* Subtle border color */
+  --color-text-main: #ffffff;      /* White text */
+  --color-text-muted: #828282;     /* Grayish sub-text */
+
+  --font-main : "DM Sans",sans-serif;
+  --font-heading : "Syne", sans-serif;
+}
+
+html,body{
+    background-color: var(--color-bg);
+    font-family: var(--font-main);
+    color: white;
+}
+
+/* style="background-image: linear-gradient(rgb(200, 244, 0) 1px, transparent 1px), linear-gradient(90deg, rgb(200, 244, 0) 1px, transparent 1px); background-size: 40px 40px;" */
+
+.grid-bg{
+  background-image: linear-gradient(rgb(200, 244, 0) 1px,transparent 1px), linear-gradient(90deg, rgb(200, 244, 0) 1px, transparent 1px);
+  background-size: 40px 40px;
+  /* opacity: 0.1; */
+}
