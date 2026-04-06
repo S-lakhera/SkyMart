@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
             className="product-card flex flex-col group bg-[#111] border border-white/5 rounded-2xl transition-all duration-400 hover:border-primary/50 hover:shadow-primary/50 shadow-sm cursor-pointer ">
             <div className='relative aspect-square bg-gray-200 overflow-hidden rounded-t-2xl py-5 px-2'>
                 <img
-                    src={thumbnail}
+                    src={product.images[0] || thumbnail}
                     className='w-full h-full object-contain  group-hover:scale-110 transition-transform duration-500'
                     alt={title}
                 />

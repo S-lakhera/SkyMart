@@ -13,24 +13,24 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Check if scroll is greater than 10px (or 70 as you had)
-      if (window.scrollY > 10) {
+    const handleScroll = (e) => {
+      
+      if (e.deltaY > 5) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('wheel', handleScroll);
     
     // Clean up the event listener when component unmounts
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <nav className={`fixed top-0 z-99 w-full bg-bg/70 backdrop-blur-sm px-4 sm:px-6 py-2 transition-all duration-200 ${
-      isScrolled ? "border-b border-border" : "border-b border-transparent"
+    <nav className={`fixed top-0 z-99 w-full bg-bg/80 backdrop-blur-sm px-4 sm:px-6 py-2 transition-all duration-300 ${
+      isScrolled ? "-translate-y-full border-b border-border" : "border-b border-transparent translate-y-0"
     }`}>
       <div className='h-full flex justify-between items-center py-1'>
 

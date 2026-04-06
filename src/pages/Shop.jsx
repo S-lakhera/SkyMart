@@ -14,7 +14,7 @@ const Shop = () => {
         <h1 className='font-heading font-bold text-3xl sm:text-4xl mb-2'>
           All Products
         </h1>
-        <p className='text-white/40 font-body text-sm'>30 Products found</p>
+        <p className='text-white/40 font-body text-sm'>{products.length} Products found</p>
       </div>
 
       <div className='bg-[#111] border border-white/80 rounded-2xl p-4 mb-6'>
