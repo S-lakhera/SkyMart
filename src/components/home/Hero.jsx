@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 import React from 'react'
 import { NavLink } from 'react-router'
 
@@ -11,20 +12,18 @@ const Hero = () => {
         <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
           <div>
             <p className="text-primary/70 text-sm font-body tracking-widest uppercase mb-3">Good afternoon 👋</p>
-            <h1 className="font-heading font-bold text-4xl sm:text-5xl text-white leading-tight mb-4">Welcome back,
-              <br />
+            <div className="font-heading font-bold text-4xl sm:text-5xl text-white leading-none mb-3 ">
+              <h1 className=''>Welcome back,</h1>
               <span className="text-primary">sagar!</span>
-            </h1>
+            </div>
             <p className="text-white/40 max-w-md">Discover today's picks — hand-curated products across electronics, fashion, and more.</p>
             <div className="flex gap-3 mt-6 flex-wrap">
-              <NavLink className="py-3 px-6 text-black rounded-2xl font-semibold text-sm flex items-center gap-2 bg-primary hover:bg-[#e2ff66] transition-all duration-300" to="/shop">Shop Now
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
+              <NavLink className="py-3 px-6 text-black rounded-2xl font-semibold text-sm flex items-center gap-2 bg-primary hover:bg-buttonHover transition-all duration-300" to="/shop">Shop Now
+                
+                <ArrowRight className='w-4 h-4' />
               </NavLink>
 
-              <a className="rounded-2xl font-semibold text-sm border py-3 px-6 border-border hover:border-white/70 transition-all duration-300 flex items-center gap-2" href="/products">View All Products</a>
+              <a className="rounded-2xl font-semibold text-sm border py-3 px-6 border-border hover:border-white/70 transition-all duration-300 flex items-center gap-2" href="/shop">View All Products</a>
             </div>
           </div>
           <div className="shrink-0 flex flex-col gap-3">

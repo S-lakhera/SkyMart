@@ -1,11 +1,11 @@
 
+import { ChevronDown, Search } from 'lucide-react';
 import ProductCard from '../components/shop/ProductCard'
 import { useLoaderData } from 'react-router'
 
 const Shop = () => {
 
  const products = useLoaderData()
- console.log(products);
  
   
   return (
@@ -22,10 +22,8 @@ const Shop = () => {
         <div className='flex flex-col sm:flex-row gap-3'>
 
           <div class="relative flex-1 ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search absolute left-3.5 top-1/2 -translate-y-1/2 text-white/25 pointer-events-none">
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.3-4.3"></path>
-            </svg>
+            <Search className='absolute left-3.5 top-1/2 -translate-y-1/2 text-muted pointer-events-none w-4' />
+            
             <input type="text" placeholder="Search products..." class="rounded-2xl text-[14px] px-4 border border-[#ffffff1a] bg-[#1d1d1d] text-white  pl-10 pr-8 h-10 w-full focus:outline-2 outline-primary/50 transition-all duration-200" value="" />
           </div>
 
@@ -39,7 +37,8 @@ const Shop = () => {
               <option value="sports">Sports</option>
               <option value="accessories">Accessories</option>
             </select>
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-white/25 pointer-events-none"><path d="m6 9 6 6 6-6"></path></svg>
+            <ChevronDown className='absolute right-3 top-1/2 -translate-y-1/2 text-white/25 pointer-events-none w-3.5' />
+            
 
           </div>
 
@@ -52,7 +51,7 @@ const Shop = () => {
               <option value="rating-asc">Lowest Rated</option>
             </select>
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-white/25 pointer-events-none"><path d="m6 9 6 6 6-6"></path></svg>
+            <ChevronDown className='absolute right-3 top-1/2 -translate-y-1/2 text-white/25 pointer-events-none w-3.5' />
           </div>
         </div>
 
@@ -60,7 +59,7 @@ const Shop = () => {
 
       <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5'>
         {products.map((product) => {
-          return <ProductCard product={product} />
+          return <ProductCard key={product.id} product={product} />
         })}
       </div>
 
