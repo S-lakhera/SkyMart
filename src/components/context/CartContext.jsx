@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { toast } from 'sonner';
 
 const CartContext = createContext();
 
@@ -20,16 +21,19 @@ export const CartProvider = ({ children }) => {
         setCartItems(prev => {
             const existing = prev.find(item => item.id === product.id);
             if (existing) {
+                toast.success('Quantity updated', { duration: 2000 });
                 return prev.map(item =>
                     item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
                 );
             }
+            toast.success('Added to cart', { duration: 2000 });
             return [...prev, { ...product, quantity: 1 }];
         });
     };
 
     const removeFromCart = (id) => {
         setCartItems(prev => prev.filter(item => item.id !== id));
+        toast.error('Removed from cart', { duration: 2000 });
     };
 
     const updateQuantity = (id, delta) => {
@@ -37,17 +41,22 @@ export const CartProvider = ({ children }) => {
             return prev
                 .map((item) => {
                     if (item.id === id) {
-                        const newQty = item.quantity + delta
+                        const newQty = item.quantity + delta;
+                        
                         return { ...item, quantity: newQty };
                     }
                     return item;
                 })
-                .filter((item) => item.quantity > 0)
-        }
-        );
+                .filter((item) => item.quantity > 0);
+        });
     };
 
-    const clearCart = () => setCartItems([]);
+    const clearCart = () => {
+        if (cartItems.length > 0) {
+            toast('Cart cleared', { icon: '🗑️', duration: 2000 });
+        }
+        setCartItems([]);
+    };
 
     const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 

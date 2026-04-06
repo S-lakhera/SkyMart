@@ -14,14 +14,14 @@ const ProductCard = ({ product }) => {
     const isInCart = (!!productInCart)
 
     const navigate = useNavigate();
-
+ 
     return (
         <div
             onClick={() => navigate(`/shop/${product.id}`)}
             className="product-card flex flex-col group bg-[#111] border border-white/5 rounded-2xl transition-all duration-400 hover:border-primary/50 hover:shadow-primary/50 shadow-sm cursor-pointer ">
             <div className='relative aspect-square bg-gray-200 overflow-hidden rounded-t-2xl py-5 px-2'>
                 <img
-                    src={product.images[0] || thumbnail}
+                    src={product.images[0] }
                     className='w-full h-full object-contain  group-hover:scale-110 transition-transform duration-500'
                     alt={title}
                 />
@@ -57,7 +57,10 @@ const ProductCard = ({ product }) => {
                         isInCart ?
                             (<div className='gap-5 flex bg-white/5 px-4 py-2 rounded-xl'>
                                 <p
-                                    onClick={() => updateQuantity(product.id, -1)}
+                                    onClick={(e) => {
+                                        e.stopPropagation()
+                                        updateQuantity(product.id, -1)
+                                    }}
                                     className='px-2 bg-primary rounded-sm text-black font-bold active:scale-90 transition-all duration-200 hover:bg-buttonHover '>
                                     -
                                 </p>
@@ -65,14 +68,18 @@ const ProductCard = ({ product }) => {
                                 <p>{productInCart.quantity} </p>
 
                                 <p
-                                    onClick={() => updateQuantity(product.id, 1)}
+                                    onClick={(e) => {
+                                        e.stopPropagation()
+                                        updateQuantity(product.id, 1)
+                                    }}
                                     className='px-2 bg-primary rounded-sm text-black font-bold active:scale-90 transition-all duration-200 hover:bg-buttonHover '>
                                     +
                                 </p>
                             </div>)
                             :
                             <button
-                                onClick={() => {
+                                onClick={(e) => {
+                                    e.stopPropagation()
                                     addToCart(product);
                                 }}
                                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-black cursor-pointer bg-primary hover:bg-buttonHover ">

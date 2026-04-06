@@ -3,9 +3,15 @@ import { NavLink } from 'react-router'
 import { useState, useEffect } from 'react';
 import { LogOut, ShoppingCart, Zap } from 'lucide-react';
 import { useCart } from './context/CartContext';
+import { useUser } from './context/UserContext';
+import { toast } from 'sonner';
 
 const Navbar = () => {
   const {setIsCartOpen, cartItems } = useCart(); 
+  const {logout} = useUser()
+  const user = JSON.parse(localStorage.getItem("skymart_session"));
+
+  
 
   // Calculate total items (e.g., if someone has 2 headphones, this shows 2)
   const totalItems = cartItems.length;
@@ -50,8 +56,8 @@ const Navbar = () => {
         <div className='flex gap-2 items-center text-muted'>
 
           <div className='flex  bg-card px-3 py-1.5 border border-border items-center gap-2 rounded-xl text-[13px]'>
-            <div className='bg-primary rounded-md px-2 py-0.5 font-heading font-semibold text-black flex items-center'>S</div>
-            <div className='text-text-muted'>Sagar</div>
+            <div className='bg-primary rounded-md px-2 py-0.5 font-heading font-semibold text-black flex items-center'>{user.avatar} </div>
+            <div className='text-text-muted capitalize'> {user.name} </div>
           </div>
 
           <div className='flex gap-3'>
@@ -69,7 +75,12 @@ const Navbar = () => {
         )}
       </button>
 
-            <button title="Logout" className="px-2 py-2  cursor-pointer hover:bg-red-500/20 hover:border-red-500/30 border border-white/10 rounded-xl transition-all text-white/60 hover:text-red-400">
+            <button
+            onClick={() => {
+              toast.info('See you next time! 👋', { duration: 2000 });
+              setTimeout(() => logout(), 400);
+            }}
+             title="Logout" className="px-2 py-2  cursor-pointer hover:bg-red-500/20 hover:border-red-500/30 border border-white/10 rounded-xl transition-all text-white/60 hover:text-red-400">
               <LogOut className='w-4 h-4' />
             </button>
           </div>

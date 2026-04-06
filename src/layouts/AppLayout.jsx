@@ -2,19 +2,21 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import { Outlet } from 'react-router'
 import Footer from '../components/Footer'
+import { Toaster } from 'sonner'
 import { CartProvider } from '../components/context/CartContext'
 import CartSidebar from '../components/cart/CartSidebar'
 
 const AppLayout = () => {
   return (
-    <CartProvider >
+    <CartProvider>
+      <Toaster position="bottom-right" theme="dark" richColors closeButton />
       <div>
         <CartSidebar/>
       </div>
       <div className='h-16'>
         <Navbar/>
       </div>
-      <div className='px-8 py-10'>
+      <div className='px-8 py-6'>
         <Outlet/>
       </div>
       <div>

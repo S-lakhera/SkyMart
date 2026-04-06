@@ -1,12 +1,14 @@
 import { Zap } from 'lucide-react'
 import React from 'react'
-import Left from '../components/login/Left'
-import LoginForm from '../components/login/LoginForm'
+import Left from '../components/auth/Left'
+import LoginForm from '../components/auth/LoginForm'
 import { Outlet } from 'react-router'
+import { Toaster } from 'sonner'
 
 const AuthLayout = () => {
     return (
         <div className='min-h-screen bg-bg flex'>
+            <Toaster position="bottom-right" theme="dark" richColors closeButton />
 
             <Left />
 

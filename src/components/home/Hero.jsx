@@ -3,6 +3,7 @@ import React from 'react'
 import { NavLink } from 'react-router'
 
 const Hero = () => {
+  const user = JSON.parse(localStorage.getItem("skymart_session"));
   return (
     
       <div className="relative overflow-hidden rounded-3xl bg-[#111] border border-white/80 p-8 sm:p-12 mb-10">
@@ -14,7 +15,7 @@ const Hero = () => {
             <p className="text-primary/70 text-sm font-body tracking-widest uppercase mb-3">Good afternoon 👋</p>
             <div className="font-heading font-bold text-4xl sm:text-5xl text-white leading-none mb-3 ">
               <h1 className=''>Welcome back,</h1>
-              <span className="text-primary">sagar!</span>
+              <span className="text-primary capitalize">{user.name}!</span>
             </div>
             <p className="text-white/40 max-w-md">Discover today's picks — hand-curated products across electronics, fashion, and more.</p>
             <div className="flex gap-3 mt-6 flex-wrap">
