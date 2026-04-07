@@ -24,7 +24,7 @@ const Hero = () => {
                 <ArrowRight className='w-4 h-4' />
               </NavLink>
 
-              <a className="rounded-2xl font-semibold text-sm border py-3 px-6 border-border hover:border-white/70 transition-all duration-300 flex items-center gap-2" href="/shop">View All Products</a>
+              <NavLink className="rounded-2xl font-semibold text-sm border py-3 px-6 border-border hover:border-white/70 transition-all duration-300 flex items-center gap-2" to="/shop">View All Products</NavLink>
             </div>
           </div>
           <div className="shrink-0 flex flex-col gap-3">

@@ -33,8 +33,8 @@ const About = () => {
 
           <div className='w-full flex flex-col justify-center'>
             <div className='w-16 h-16 bg-primary rounded-3xl flex items-center justify-center mx-auto mb-6 animate-bounce '>
-              <Zap className='w-7 h-7 text-[#0d0d0d] fill-[#0d0d0d]'/>
-              
+              <Zap className='w-7 h-7 text-[#0d0d0d] fill-[#0d0d0d]' />
+
             </div>
 
             <div className='flex justify-center flex-col items-center text-center'>
@@ -43,68 +43,68 @@ const About = () => {
             </div>
           </div>
 
-          <div className='w-full grid grid-cols-2 lg:grid-cols-4 gap-5 px-25 p-5 '>
+          <div className='w-full grid grid-cols-2 lg:grid-cols-4 gap-5 md:px-25 py-5 '>
             {cardData.map((card) => <InfoCard card={card} />)}
           </div>
         </section>
 
-        <section className='w-full p-10 flex flex-col gap-10'>
+        <section className='w-full md:p-10 flex flex-col gap-10'>
           {/* Our Story Section */}
-        <div className="max-w-5xl w-full bg-card border border-border rounded-[2.5rem] p-8 md:p-12 flex justify-start flex-col">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6 text-white">
-            Our Story
-          </h2>
-          <div className="space-y-6 text-muted leading-relaxed text-sm md:text-base">
-            <p>
-              SkyMart started in 2022 as a small side project — two engineers tired of bloated, slow e-commerce experiences. [cite: 13]
-              We asked ourselves: what if shopping online was actually <span className="italic">enjoyable</span>? [cite: 14]
-            </p>
-            <p>
-              Three years later, SkyMart serves over 50,000 customers across the country. [cite: 15]
-              We stock electronics, fashion, jewelry, and everyday essentials — all at prices that don't require a second mortgage. [cite: 16]
-            </p>
-            <p>
-              We're still the same team at heart: obsessed with speed, transparency, and making you feel good about every purchase you make here. [cite: 17]
-            </p>
+          <div className="max-w-5xl w-full bg-card border border-border rounded-[2.5rem] p-8 md:p-12 flex justify-start flex-col">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6 text-white">
+              Our Story
+            </h2>
+            <div className="space-y-6 text-muted leading-relaxed text-sm md:text-base">
+              <p>
+                SkyMart started in 2022 as a small side project — two engineers tired of bloated, slow e-commerce experiences. 
+                We asked ourselves: what if shopping online was actually <span className="italic">enjoyable</span>? 
+              </p>
+              <p>
+                Three years later, SkyMart serves over 50,000 customers across the country.
+                We stock electronics, fashion, jewelry, and everyday essentials — all at prices that don't require a second mortgage. 
+              </p>
+              <p>
+                We're still the same team at heart: obsessed with speed, transparency, and making you feel good about every purchase you make here. 
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* What We Stand For Section */}
-        <div className="max-w-5xl w-full">
-          <h2 className="font-heading text-3xl md:text-2xl font-bold pb-5 text-center text-white">
-            What We Stand For
-          </h2>
+          {/* What We Stand For Section */}
+          <div className="max-w-5xl w-full">
+            <h2 className="font-heading text-3xl md:text-2xl font-bold pb-5 text-center text-white">
+              What We Stand For
+            </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Trust Card */}
-            <ValueCard
-              icon={<ShieldCheck size={20} className="text-primary" />}
-              title="Trust"
-              description="Every product is verified for quality and authenticity before listing."
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Trust Card */}
+              <ValueCard
+                icon={<ShieldCheck size={20} className="text-primary" />}
+                title="Trust"
+                description="Every product is verified for quality and authenticity before listing."
+              />
 
-            {/* Speed Card */}
-            <ValueCard
-              icon={<Zap size={20} className="text-primary" />}
-              title="Speed"
-              description="We obsess over delivery times so your orders arrive when promised."
-            />
+              {/* Speed Card */}
+              <ValueCard
+                icon={<Zap size={20} className="text-primary" />}
+                title="Speed"
+                description="We obsess over delivery times so your orders arrive when promised."
+              />
 
-            {/* Community Card */}
-            <ValueCard
-              icon={<Users size={20} className="text-primary" />}
-              title="Community"
-              description="Built around real customer feedback, not just business metrics."
-            />
+              {/* Community Card */}
+              <ValueCard
+                icon={<Users size={20} className="text-primary" />}
+                title="Community"
+                description="Built around real customer feedback, not just business metrics."
+              />
 
-            {/* Quality Card */}
-            <ValueCard
-              icon={<Star size={20} className="text-primary" />}
-              title="Quality"
-              description="We curate the best — no filler, no junk, just great products."
-            />
+              {/* Quality Card */}
+              <ValueCard
+                icon={<Star size={20} className="text-primary" />}
+                title="Quality"
+                description="We curate the best — no filler, no junk, just great products."
+              />
+            </div>
           </div>
-        </div>
         </section>
       </div>
     </div>

@@ -32,7 +32,7 @@ const ProductCard = ({ product }) => {
 
             <div className="p-4 flex flex-col flex-1 gap-2">
                 <p className="text-white/30 text-[10px] uppercase tracking-widest font-body">{category}</p>
-                <h3 className="font-body font-medium text-white/85 text-sm leading-snug line-clamp-2 flex-1">{title}</h3>
+                <h3 className="font-body font-medium text-sm leading-snug line-clamp-2 flex-1">{title}</h3>
 
                 <div className="flex items-center gap-1.5">
                     <div className="flex items-center gap-0.5">
@@ -51,17 +51,17 @@ const ProductCard = ({ product }) => {
                     <span className="text-white/30 text-[10px]">({rating})</span>
                 </div>
 
-                <div className="flex items-center justify-between mt-auto pt-3 border-t border-white/50">
-                    <span className="font-heading font-bold text-primary text-lg">${price}</span>
+                <div className="flex items-center justify-between mt-auto pt-3 border-t border-white/50 gap-2">
+                    <span className="font-heading font-bold text-primary text-sm md:text-lg">${price}</span>
                     {
                         isInCart ?
-                            (<div className='gap-5 flex bg-white/5 px-4 py-2 rounded-xl'>
+                            (<div className='gap-2 md:gap-5  flex bg-white/5 px-2 md:px-4 py-2 rounded-xl'>
                                 <p
                                     onClick={(e) => {
                                         e.stopPropagation()
                                         updateQuantity(product.id, -1)
                                     }}
-                                    className='px-2 bg-primary rounded-sm text-black font-bold active:scale-90 transition-all duration-200 hover:bg-buttonHover '>
+                                    className='px-1 md:px-2 bg-primary rounded-sm text-black font-bold active:scale-90 transition-all duration-200 hover:bg-buttonHover '>
                                     -
                                 </p>
 
@@ -72,7 +72,7 @@ const ProductCard = ({ product }) => {
                                         e.stopPropagation()
                                         updateQuantity(product.id, 1)
                                     }}
-                                    className='px-2 bg-primary rounded-sm text-black font-bold active:scale-90 transition-all duration-200 hover:bg-buttonHover '>
+                                    className='px-1 md:px-2 bg-primary rounded-sm text-black font-bold active:scale-90 transition-all duration-200 hover:bg-buttonHover '>
                                     +
                                 </p>
                             </div>)
@@ -82,7 +82,7 @@ const ProductCard = ({ product }) => {
                                     e.stopPropagation()
                                     addToCart(product);
                                 }}
-                                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-black cursor-pointer bg-primary hover:bg-buttonHover ">
+                                className="flex items-center gap-1.5 p-1 md:px-3 md:py-1.5 rounded-xl text-xs font-semibold text-black cursor-pointer bg-primary hover:bg-buttonHover ">
                                 <ShoppingCart size={14} />
                                 Add
                             </button>

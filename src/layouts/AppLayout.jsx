@@ -18,7 +18,7 @@ const AppLayout = () => {
       <div className='h-16'>
         <Navbar/>
       </div>
-      <div className='px-8 py-6'>
+      <div className='px-3 md:px-8 py-6'>
         <Outlet/>
       </div>
       <div>

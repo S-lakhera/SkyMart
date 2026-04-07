@@ -9,17 +9,19 @@ const Footer = () => {
         <div className="col-span-1 md:col-span-2">
           <h2 className="font-heading text-2xl font-bold text-primary mb-4 italic">SkyMart</h2>
           <p className="text-text-muted max-w-sm leading-relaxed">
-            A next-generation e-commerce platform built to make online shopping fast, fair, and enjoyable for everyone. [cite: 6]
+            A next-generation e-commerce platform built to make online shopping fast, fair, and enjoyable for everyone.
           </p>
         </div>
 
         {/* Quick Links */}
         <div>
           <h4 className="text-text-main font-semibold mb-4">Navigation</h4>
-          <ul className="space-y-2 text-text-muted text-sm">
-            <li><NavLink to="/" className="hover:text-primary transition-colors">Home</NavLink></li>
-            <li><NavLink to="/shop" className="hover:text-primary transition-colors">Shop</NavLink></li>
-            <li><NavLink to="/about" className="hover:text-primary transition-colors text-primary">About</NavLink></li>
+          <ul className="space-y-2 text-text-muted text-sm text-muted">
+            <li><NavLink to="/" className={({ isActive }) => isActive ? "text-primary" : "hover:text-white transition-colors"}>Home</NavLink></li>
+
+            <li><NavLink to="/shop" className={({ isActive }) => isActive ? "text-primary" : "hover:text-white transition-colors"}>Shop</NavLink></li>
+
+            <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-primary" : "hover:text-white transition-colors"}>About</NavLink></li>
           </ul>
         </div>
 

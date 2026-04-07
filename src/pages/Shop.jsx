@@ -115,7 +115,7 @@ const Shop = () => {
                         <select
                             value={category}
                             onChange={e => setCategory(e.target.value)}
-                            className="h-10 pr-8 appearance-none cursor-pointer min-w-44 rounded-2xl text-[14px] px-4 border border-[#ffffff1a] bg-[#1d1d1d] text-white focus:outline-2 outline-primary/50 transition-all duration-200"
+                            className="h-10 pr-8 appearance-none cursor-pointer min-w-44 rounded-2xl text-[14px] px-4 border border-[#ffffff1a] bg-[#1d1d1d] text-white focus:outline-2 outline-primary/50 transition-all duration-200 w-full"
                         >
                             <option value="all">All Categories</option>
                             {categories.map(cat => (
@@ -130,7 +130,7 @@ const Shop = () => {
                         <select
                             value={sort}
                             onChange={e => setSort(e.target.value)}
-                            className="h-10 pr-8 appearance-none cursor-pointer min-w-44 rounded-2xl text-[14px] px-4 border border-[#ffffff1a] bg-[#1d1d1d] text-white focus:outline-2 outline-primary/50 transition-all duration-200"
+                            className="h-10 pr-8 appearance-none cursor-pointer min-w-44 rounded-2xl text-[14px] px-4 border border-[#ffffff1a] bg-[#1d1d1d] text-white focus:outline-2 outline-primary/50 transition-all duration-200 w-full"
                         >
                             {SORT_OPTIONS.map(opt => (
                                 <option key={opt.value} value={opt.value}>{opt.label}</option>

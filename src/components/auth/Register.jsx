@@ -62,7 +62,7 @@ const Register = () => {
                 Create Account
             </h2>
             <p className='text-muted text-center text-sm mb-8'>
-                Join the next-generation shopping experience [cite: 6]
+                Join the next-generation shopping experience 
             </p>
 
             <form onSubmit={handleSubmit(handleFormSubmit)} className='space-y-4'>

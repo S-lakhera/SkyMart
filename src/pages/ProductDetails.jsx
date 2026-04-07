@@ -162,7 +162,7 @@ const ProductDetails = () => {
                         </Link>
                     </div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10 px-5 ">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-10  md:px-5 ">
                         {related.map(p => (
                             <ProductCard key={p.id} product={p} />
                         ))}
