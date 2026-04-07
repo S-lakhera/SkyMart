@@ -1,3 +1,4 @@
+import { PartyPopper } from 'lucide-react';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { toast } from 'sonner';
 
@@ -58,12 +59,20 @@ export const CartProvider = ({ children }) => {
         setCartItems([]);
     };
 
+    const checkout = () => {
+        if (cartItems.length > 0) {
+            toast.success('Order Placed', { icon:<PartyPopper/> , duration: 2000 });
+        }
+        setCartItems([]);
+    };
+
+
     const subtotal = (cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0));
 
     return (
         <CartContext.Provider value={{
             cartItems, addToCart, removeFromCart, updateQuantity, clearCart, subtotal,
-            isCartOpen, setIsCartOpen
+            isCartOpen, setIsCartOpen, checkout
         }}>
             {children}
         </CartContext.Provider>

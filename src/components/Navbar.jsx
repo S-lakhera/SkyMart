@@ -16,17 +16,17 @@ const Navbar = () => {
   const totalItems = cartItems.length;
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (e) => {
       // Hide navbar if scrolled more than 50px
-      if (window.scrollY > 50) {
+      if (e.deltaY > 0) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('wheel', handleScroll);
+    return () => window.removeEventListener('wheel', handleScroll);
   }, []);
 
   const handleLogout = () => {

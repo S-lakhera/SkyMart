@@ -69,7 +69,6 @@ const Register = () => {
 
             <form onSubmit={handleSubmit(handleFormSubmit)} className='space-y-4'>
 
-                {/* Full Name */}
                 <div>
                     <div className="relative">
                         <User className='absolute left-3.5 top-1/2 -translate-y-1/2 text-muted/50 w-4' />
@@ -86,7 +85,6 @@ const Register = () => {
                     {errors.name && <p className='text-red-500 text-[10px] mt-1 ml-2'>{errors.name.message}</p>}
                 </div>
 
-                {/* Email - Manual Validation */}
                 <div>
                     <div className="relative">
                         <Mail className='absolute left-3.5 top-1/2 -translate-y-1/2 text-muted/50 w-4' />
@@ -98,7 +96,7 @@ const Register = () => {
                                     message: "Please enter a valid email format"
                                 }
                             })}
-                            type="text" // Removed type="email" for manual control
+                            type="text" 
                             placeholder="Email address"
                             className="pl-10 rounded-xl border border-border/40 bg-white/5 w-full py-3 text-sm text-white outline-none focus:border-primary transition-all"
                         />
@@ -106,7 +104,6 @@ const Register = () => {
                     {errors.email && <p className='text-red-500 text-[10px] mt-1 ml-2'>{errors.email.message}</p>}
                 </div>
 
-                {/* Password - Manual Validation */}
                 <div>
                     <div className="relative">
                         <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted/50 w-4" />
@@ -117,9 +114,8 @@ const Register = () => {
                             className="pl-10 pr-10 rounded-full border border-border/40 bg-white/5 w-full py-3 text-sm text-white outline-none focus:border-primary transition-all"
                         />
 
-                        {/* Eye Icon Button here */}
                         <button
-                            type="button" // CRITICAL: Set to "button" so it doesn't submit the form
+                            type="button"  submit the form
                             onClick={() => setShowPassword(!showPassword)}
                             className="absolute right-3.5 top-1/2 -translate-y-1/2 text-muted hover:text-white transition-colors cursor-pointer"
                         >
@@ -131,7 +127,6 @@ const Register = () => {
                         </button>
                     </div>
 
-                    {/* Strength Meter Bars */}
                     {password && (
                         <div className="mt-3 px-1">
                             <div className="flex gap-2 h-1 mb-2">
@@ -146,7 +141,6 @@ const Register = () => {
                                 ))}
                             </div>
 
-                            {/* Strength Label */}
                             <div className="flex justify-end">
                                 <span className={`text-[10px] font-bold uppercase tracking-wider ${strengthMeta[strength - 1]?.text}`}>
                                     {strengthMeta[strength - 1]?.label}
@@ -156,7 +150,6 @@ const Register = () => {
                     )}
                 </div>
 
-                {/* Confirm Password - Manual Validation */}
                 <div>
                     <div className="relative">
                         <Lock className='absolute left-3.5 top-1/2 -translate-y-1/2 text-muted/50 w-4' />

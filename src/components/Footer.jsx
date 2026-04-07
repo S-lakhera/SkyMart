@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-bg border-t border-border/30 pt-16 pb-8 px-6 font-main">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-        {/* Brand Section */}
+
         <div className="col-span-1 md:col-span-2">
           <h2 className="font-heading text-2xl font-bold text-primary mb-4 italic">SkyMart</h2>
           <p className="text-text-muted max-w-sm leading-relaxed">
@@ -13,7 +13,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h4 className="text-text-main font-semibold mb-4">Navigation</h4>
           <ul className="space-y-2 text-text-muted text-sm text-muted">
@@ -25,7 +24,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact/Support */}
         <div>
           <h4 className="text-text-main font-semibold mb-4">Support</h4>
           <ul className="space-y-2 text-text-muted text-sm">
@@ -36,7 +34,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto pt-8 border-t border-border/10 flex flex-col md:row justify-between items-center gap-4 text-[10px] uppercase tracking-widest text-text-muted">
         <p>© 2025 SkyMart. All rights reserved.</p>
         <p className="opacity-50 italic">Built with React + Redux + TanStack Query </p>

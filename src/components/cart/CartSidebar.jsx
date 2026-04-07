@@ -4,8 +4,8 @@ import { useCart } from '../context/CartContext';
 import { useNavigate } from 'react-router';
 
 const CartSidebar = () => {
-    const { cartItems, removeFromCart, updateQuantity, clearCart, subtotal, isCartOpen, setIsCartOpen } = useCart();
-
+    const { cartItems, removeFromCart, updateQuantity, clearCart, subtotal, isCartOpen, setIsCartOpen, checkout } = useCart();    
+ 
     const navigate = useNavigate()
 
     return (
@@ -77,7 +77,7 @@ const CartSidebar = () => {
                         <span className="text-muted text-sm">Total</span>
                         <span className="text-2xl font-bold font-heading text-white">${subtotal.toFixed(2)}</span>
                     </div>
-                    <button className="w-full bg-primary hover:bg-buttonHover text-black py-4 rounded-2xl font-bold flex items-center justify-center gap-2 active:scale-[0.98] transition-all">
+                    <button onClick={checkout} className="w-full bg-primary hover:bg-buttonHover text-black py-4 rounded-2xl font-bold flex items-center justify-center gap-2 active:scale-[0.98] transition-all">
                         Checkout <ArrowRight className="" size={18} />
                     </button>
                     <button onClick={clearCart} className="w-full text-muted text-xs mt-4 uppercase tracking-[0.2em] hover:text-white transition-colors">
