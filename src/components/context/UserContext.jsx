@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { useNavigate } from "react-router";
 
 
 const UserContext = createContext()
@@ -18,8 +19,10 @@ export const UserProvider = ({ children }) => {
     const registerUser = (userData) => {
         const newUsers = [...registeredUser, userData]
         setRegisteredUser(newUsers)
-        localStorage.setItem("skymart_users", JSON.stringify(newUsers))
+        setCurrentUser(userData)
 
+        localStorage.setItem("skymart_users", JSON.stringify(newUsers))
+        localStorage.setItem('skymart_session', JSON.stringify(userData));
     }
 
     const login = (email, password) => {

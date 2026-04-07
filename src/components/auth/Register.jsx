@@ -15,6 +15,7 @@ const Register = () => {
         register,
         handleSubmit,
         watch,
+        reset,
         formState: { errors }
     } = useForm({
         mode: "onChange" 
@@ -53,7 +54,8 @@ const Register = () => {
             avatar: firstLetter
         });
         toast.success("Account created! Welcome to SkyMart 🎉")
-        navigate("/");
+        reset()
+        navigate("/")
     };
 
     return (
