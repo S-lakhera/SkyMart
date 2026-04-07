@@ -14,7 +14,6 @@ const Home = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch products on mount (leverages in-memory cache)
   useEffect(() => {
     let cancelled = false;
     getAllProducts()
@@ -24,7 +23,6 @@ const Home = () => {
     return () => { cancelled = true; };
   }, []);
 
-  // Derive categories with their product counts
   const categoryData = useMemo(() => {
     const map = {};
     products.forEach(p => {
@@ -35,7 +33,6 @@ const Home = () => {
       .map(([name, count]) => ({ name, count }));
   }, [products]);
 
-  // Top 8 products sorted by rating (descending)
   const topRated = useMemo(() => {
     return [...products]
       .sort((a, b) => b.rating - a.rating)

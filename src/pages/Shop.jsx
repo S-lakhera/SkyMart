@@ -20,7 +20,6 @@ const Shop = () => {
     const [category, setCategory] = useState(searchParams.get('category') || 'all');
     const [sort, setSort]         = useState('default');
 
-    // Derive unique categories from cached product data (no extra API call)
     const categories = useMemo(() => {
         const unique = [...new Set(products.map(p => p.category))].sort();
         return unique;
