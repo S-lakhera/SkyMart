@@ -5,10 +5,12 @@ import Footer from '../components/Footer'
 import { Toaster } from 'sonner'
 import { CartProvider } from '../components/context/CartContext'
 import CartSidebar from '../components/cart/CartSidebar'
+import ScrollToTop from '../components/ScrollToTop'
 
 const AppLayout = () => {
   return (
     <CartProvider>
+      <ScrollToTop/>
       <Toaster position="bottom-right" theme="dark" richColors closeButton />
       <div>
         <CartSidebar/>

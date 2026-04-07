@@ -10,16 +10,13 @@ const CartSidebar = () => {
 
     return (
         <>
-            {/* Overlay */}
             <div
                 className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-100 transition-opacity duration-300 ${isCartOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                 onClick={() => setIsCartOpen(false)}
             />
 
-            {/* Sidebar */}
             <div className={`fixed right-0 top-0 h-full w-full max-w-md bg-bg border-l border-border z-101 transition-transform duration-300 transform ${isCartOpen ? 'translate-x-0' : 'translate-x-full'} flex flex-col font-main`}>
 
-                {/* Header */}
                 <div className="p-4 border-b border-border/20 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-xl  flex items-center justify-center text-primary">
@@ -35,7 +32,6 @@ const CartSidebar = () => {
                     </button>
                 </div>
 
-                {/* Items List */}
                 <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar">
                     {cartItems.map((item) => (
                         <div key={item.id} className="bg-card border border-border/50 rounded-2xl px-5 py-2 justify-center items-center flex gap-4">
@@ -76,7 +72,6 @@ const CartSidebar = () => {
                     )}
                 </div>
 
-                {/* Footer */}
                 <div className="px-8 py-3 border-t border-border/30 bg-card/50 backdrop-blur-md">
                     <div className="flex justify-between items-end mb-6">
                         <span className="text-muted text-sm">Total</span>

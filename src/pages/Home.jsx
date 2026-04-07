@@ -8,7 +8,7 @@ import { useCart } from '../components/context/CartContext'
 
 const Home = () => {
 const {cartItems,subtotal} = useCart();
-const cardData = [
+const cardData = [ 
   {
     svg: <Package/>,
     heroText: cartItems.length,
@@ -18,7 +18,7 @@ const cardData = [
   },
   {
     svg: <TrendingUp/>,
-    heroText:subtotal,
+    heroText:subtotal.toFixed(2),
     text1:"Cart Value",
     text2:"Ready to checkout",
     iconStyle:"bg-blue-500/10 text-blue-400"

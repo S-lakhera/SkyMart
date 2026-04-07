@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router';
 import {
     ChevronLeft,
@@ -47,20 +47,16 @@ const ProductDetails = () => {
                     />
                 </div>
 
-                {/* ── Right: Info ── */}
                 <div className="flex flex-col gap-4">
 
-                    {/* Category tag */}
                     <span className="self-start bg-primary/10 text-primary px-3 py-1 rounded-xl border border-primary/20 text-[10px] font-bold capitalize tracking-wider">
                         {product.category}
                     </span>
 
-                    {/* Title */}
                     <h1 className="font-heading text-2xl md:text-3xl font-bold leading-snug">
                         {product.title}
                     </h1>
 
-                    {/* Rating row */}
                     <div className="flex items-center gap-3">
                         <div className="flex items-center gap-0.5">
                             {[...Array(5)].map((_, i) => (
@@ -78,7 +74,6 @@ const ProductDetails = () => {
                         )}
                     </div>
 
-                    {/* Price */}
                     <div className="border-y border-border/30 py-3">
                         <span className="text-primary font-heading text-4xl font-bold tracking-tight">
                             ${product.price}
@@ -90,12 +85,10 @@ const ProductDetails = () => {
                         )}
                     </div>
 
-                    {/* Description */}
                     <p className="text-muted leading-relaxed text-sm">
                         {product.description || 'High-quality product curated specifically for the SkyMart collection.'}
                     </p>
 
-                    {/* Add to Cart / Qty controls */}
                     <div className="flex gap-3 mt-1">
                         {isInCart ? (
                             <div className="flex-1 border border-primary/40 font-bold py-3.5 rounded-2xl flex items-center justify-between px-8 transition-all">
@@ -129,14 +122,12 @@ const ProductDetails = () => {
                         </button>
                     </div>
 
-                    {/* Feature pills */}
                     <div className="grid grid-cols-3 gap-3 mt-1">
                         <FeatureBox icon={<Truck size={16} />}       label="Free Delivery" sub="On orders $50+" />
                         <FeatureBox icon={<ShieldCheck size={16} />} label="Secure Pay"    sub="256-bit SSL" />
                         <FeatureBox icon={<RotateCcw size={16} />}   label="Easy Returns"  sub="30-day policy" />
                     </div>
 
-                    {/* Prev / Next navigation */}
                     <div className="flex gap-3 mt-1">
                         <button
                             onClick={() => navigate(`/shop/${product.id - 1}`)}

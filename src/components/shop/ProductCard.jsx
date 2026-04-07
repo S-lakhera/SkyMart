@@ -4,7 +4,7 @@ import { useCart } from '../context/CartContext';
 import { useNavigate } from 'react-router';
 
 const ProductCard = ({ product }) => {
-    const { title, price, thumbnail, category, rating } = product;
+    const { title, price, category, rating } = product;
     const { addToCart, cartItems, updateQuantity } = useCart()
 
     // Logic: Round the decimal rating to the nearest whole number (e.g., 4.56 -> 5)
