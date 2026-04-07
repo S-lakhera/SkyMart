@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { ChevronDown, Search, X } from 'lucide-react';
 import ProductCard from '../components/shop/ProductCard';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useSearchParams } from 'react-router';
 
 // All unique categories derived at runtime from the loaded products
 const SORT_OPTIONS = [
@@ -14,9 +14,10 @@ const SORT_OPTIONS = [
 
 const Shop = () => {
     const products = useLoaderData();
+    const [searchParams] = useSearchParams();
 
     const [query, setQuery]       = useState('');
-    const [category, setCategory] = useState('all');
+    const [category, setCategory] = useState(searchParams.get('category') || 'all');
     const [sort, setSort]         = useState('default');
 
     // Derive unique categories from cached product data (no extra API call)
