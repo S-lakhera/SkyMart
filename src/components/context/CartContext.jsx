@@ -64,7 +64,7 @@ export const CartProvider = ({ children }) => {
             toast.success('Order Placed', { icon:<PartyPopper/> , duration: 2000 });
         }
         setCartItems([]);
-    };
+    }; 
 
 
     const subtotal = (cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0));
